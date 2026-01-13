@@ -128,7 +128,7 @@ suspend fun buscarDescripcionRAE(palabra: String): String = withContext(Dispatch
             .build()
 
         val response = OkHttpClient().newCall(request).execute()
-        val body = response.body?.string() ?: return@withContext "No se encontró definición"
+        val body = response.body?.string() ?: return@withContext "No  se  encontró definición"
 
         val json = JSONObject(body)
         val description = json
