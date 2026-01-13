@@ -19,7 +19,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             MiniProyectoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    // Aquí llamamos a nuestra pantalla limpia que está en ui/screen
                     Box(modifier = Modifier.padding(innerPadding)) {
                         DiccionarioScreen()
                     }

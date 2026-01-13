@@ -12,13 +12,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel // Necesitas la dependencia lifecycle-viewmodel-compose
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.miniproyecto.ui.viewmodel.DiccionarioViewModel
 
 @Composable
 fun DiccionarioScreen(
-    // El ViewModel se inyecta aquí por defecto
     viewModel: DiccionarioViewModel = viewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -53,7 +52,6 @@ fun DiccionarioScreen(
 
         Spacer(Modifier.height(24.dp))
 
-        // Sección de Resultados
         if (state.cargando) {
             CircularProgressIndicator()
         } else {

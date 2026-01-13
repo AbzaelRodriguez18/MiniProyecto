@@ -8,7 +8,6 @@ import org.json.JSONObject
 
 class DiccionarioRepository {
 
-    // Función suspendida para no bloquear el hilo principal
     suspend fun obtenerDefinicion(palabra: String): String = withContext(Dispatchers.IO) {
         try {
             val client = OkHttpClient()
@@ -29,7 +28,6 @@ class DiccionarioRepository {
         }
     }
 
-    // Función privada auxiliar para limpiar el JSON
     private fun parsearJsonRAE(jsonString: String): String {
         return try {
             val json = JSONObject(jsonString)
